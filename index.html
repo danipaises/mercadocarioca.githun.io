@@ -34,6 +34,195 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
         }
+        /* Style for gallery images */
+        .gallery-image {
+            transition: transform 0.2s ease-in-out;
+            aspect-ratio: 1 / 1; /* Ensures the image is a square */
+            object-fit: cover; /* Prevents the image from being distorted */
+            cursor: pointer; /* Indicates the image is clickable */
+        }
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        /* Styles for the image modal (lightbox) */
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay container -->
+    <div class="overlay min-h-screen w-full">
+        <!-- Main container -->
+        <main class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
+            <div class="w-full max-w-md mx-auto">
+
+                <!-- Profile Section -->
+                <header class="text-center mb-8">
+                    <!-- Profile Image -->
+                    <img src="https://i.postimg.cc/PqYkV7LZ/1000061341.webp" 
+                         alt="Logo do Mercado Carioca" 
+                         class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg object-cover">
+                    <!-- Business Name -->
+                    <h1 class="text-3xl font-bold text-white">Mercado Carioca</h1>
+                    <p class="text-gray-200 mt-2">Sua mercearia de confiança. Produtos frescos e de qualidade.</p>
+                </header>
+
+                <!-- Links Section -->
+                <section class="space-y-4 mb-12">
+                    <!-- Facebook Link -->
+                    <a href="https://www.facebook.com/mercadocariocapoa/" target="_blank" rel="noopener noreferrer"
+                       class="link-button flex items-center justify-center w-full bg-white text-slate-700 font-semibold py-4 px-5 rounded-lg shadow-md">
+                        <i class="fab fa-facebook fa-lg mr-3" style="color: #1877F2;"></i>
+                        <span>Acesse nosso Facebook</span>
+                    </a>
+
+                    <!-- Google Maps Link -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=R.+Demétrio+Ribeiro,+686+-+Centro+Histórico,+Porto+Alegre+-+RS" target="_blank" rel="noopener noreferrer"
+                       class="link-button flex items-center justify-center w-full bg-white text-slate-700 font-semibold py-4 px-5 rounded-lg shadow-md">
+                        <i class="fas fa-map-marker-alt fa-lg mr-3" style="color: #DB4437;"></i>
+                        <span>Como Chegar</span>
+                    </a>
+                </section>
+
+                <!-- Best Sellers Section -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold text-white text-center mb-6">Produtos Mais Vendidos</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Product 1 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/MGRBGzLL/1000061124.webp" 
+                                 alt="Imagem de produto mais vendido" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Product 2 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/gjcTvbzk/IMG-20250809-WA0043.jpg" 
+                                 alt="Imagem de produto mais vendido" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Product 3 (Placeholder) -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://placehold.co/400x400/e2e8f0/64748b?text=Em+breve" 
+                                 alt="Imagem de produto em breve" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Product 4 (Placeholder) -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://placehold.co/400x400/e2e8f0/64748b?text=Em+breve" 
+                                 alt="Imagem de produto em breve" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Store Gallery Section -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold text-white text-center mb-6">Dentro e fora da loja</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Image 1 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/0N9cwVRt/IMG-20250809-WA0018.jpg" 
+                                 alt="Foto do interior da loja" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Image 2 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/gJJsMr08/IMG-20250809-WA0049.jpg" 
+                                 alt="Foto do interior da loja" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Image 3 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/1zMMcDyy/IMG-20250809-WA0051.jpg" 
+                                 alt="Foto do interior da loja" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                        <!-- Image 4 -->
+                        <div class="bg-white rounded-lg shadow-md p-2 text-center">
+                            <img src="https://i.postimg.cc/DwkC22C3/IMG-20250809-WA0058.jpg" 
+                                 alt="Foto do exterior da loja" 
+                                 class="gallery-image rounded-md w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Location Section -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white text-center mb-6">Nossa Localização</h2>
+                    <div class="bg-white rounded-lg shadow-md p-2 overflow-hidden">
+                        <!-- Embedded Google Map with the correct address -->
+                        <iframe
+                            src="https://maps.google.com/maps?q=R.%20Dem%C3%A9trio%20Ribeiro%2C%20686%20-%20Centro%20Hist%C3%B3rico%2C%20Porto%20Alegre%20-%20RS&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                            height="350"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-md w-full">
+                        </iframe>
+                    </div>
+                    <p class="text-center text-gray-200 mt-4 font-medium flex items-center justify-center">
+                        <i class="fas fa-location-dot fa-lg mr-2" style="color: #f87171;"></i>
+                        <span>R. Demétrio Ribeiro, 686 - Centro Histórico, Porto Alegre - RS</span>
+                    </p>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center mt-12 mb-4">
+                    <p class="text-sm text-gray-300">Mercado Carioca &copy; 2024</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Image Zoom -->
+    <div id="imageModal" class="modal fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4">
+        <span id="closeModal" class="absolute top-4 right-6 text-white text-5xl font-bold cursor-pointer hover:text-gray-300">&times;</span>
+        <img id="modalImage" src="" alt="Imagem ampliada" class="max-w-full max-h-full rounded-lg shadow-2xl">
+    </div>
+
+    <script>
+        // JavaScript for the image modal functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+            const images = document.querySelectorAll('.gallery-image');
+
+            // Function to show the modal
+            const showModal = (e) => {
+                modal.style.display = 'flex';
+                modalImg.src = e.target.src;
+            };
+
+            // Function to hide the modal
+            const hideModal = () => {
+                modal.style.display = 'none';
+            };
+
+            // Add click event to all gallery images
+            images.forEach(img => {
+                img.addEventListener('click', showModal);
+            });
+
+            // Add click event to the close button
+            closeModal.addEventListener('click', hideModal);
+
+            // Add click event to the modal background to close it
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
         /* Style for product images */
         .product-image {
             transition: transform 0.2s ease-in-out;
@@ -144,4 +333,5 @@
 
 </body>
 </html>
+
 
